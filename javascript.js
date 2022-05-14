@@ -1,19 +1,28 @@
-//variable for R P and S
-const a = 'rock';
-const b = 'paper';
-const c = 'scissors';
+const choices =['rock', 'paper', 'scissors'];
 
-//randomly select an RPS variable 
-const myArray = [a, b, c];
-
-//function to randomly select R P or S form the myArray
-function computerPlay() {
-  return myArray[~~(Math.random() * myArray.length)];
+function game(){
+    //play the game
+    //play 5 rounds
+    //console based
+    playRound();
 }
 
-function playerSelection() {
-    
+function playRound() {
+    const playerSelection = playerChoice();
+    const computerSelection = computerChoice();
+    //gets result of computerChoice function
+    //which is R P or S
 }
-//error check to see if the computer function works
-const computerSelection = computerPlay();
-console.log(computerSelection);
+
+function playerChoice () {
+    //get input from the player
+    let input = prompt('Type Rock, Paper, or Scissors');
+}
+
+function computerChoice() {
+    //get random input from the computer
+    return choices[Math.floor(Math.random()*choices.length)]
+    //choice.length means 3, due to 3 choice 0,1,2, could input 3 as choices 
+    //dont change
+}
+
