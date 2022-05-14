@@ -4,13 +4,16 @@ const b = 'paper';
 const c = 'scissors';
 
 //randomly select an RPS variable 
-const array = [a, b, c];
-const rand = Math.floor(Math.random()*array.length);
-const rValue = array[rand];
-console.log(rValue);
+const myArray = [a, b, c];
 
-
-//computer plays RPC
+//function to randomly select R P or S form the myArray
 function computerPlay() {
-
+  return myArray[~~(Math.random() * myArray.length)];
 }
+
+function playerSelection() {
+    
+}
+//error check to see if the computer function works
+const computerSelection = computerPlay();
+console.log(computerSelection);
