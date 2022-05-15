@@ -45,15 +45,29 @@ function computerChoice() {
 //below function validates the choice, makes sure 
 //input is R P or S
 //if not R P or S then it will not log the response
-function validateInput(choice){
-    if(choices.includes(choice));
+function validateInput(choice) {
         return choices.includes(choice);
-    
 // will only select a choice if it is R P or S (choices)
 //then returns that choice to the console
 }
 
-
+function checkWinner(choiceP, choiceC) {
+    if(choiceP = choiceC) {
+        return 'tie';
+    } else if(choiceP === 'rock' && choiceC == 'scissors'){
+        return 'player wins';
+    } else if(choiceP === 'scissors' && choiceC == 'paper'){
+        return 'player wins';
+    } else if(choiceP === 'paper' && choiceC == 'rock'){
+        return 'player wins';
+    } else if(choiceP === 'rock' && choiceC == 'paper'){
+        return 'computer wins';
+    } else if(choiceP === 'scissors' && choiceC == 'rock'){
+        return 'computer wins'
+    } else if(choiceP === 'paper' && choiceC == 'scissors'){
+        return 'computer wins'
+    }
+}
 
 
 //this begins the game
