@@ -82,7 +82,7 @@ function checkWinner(choiceP, choiceC) {
 }
 
 
-//logwins function to check how many wins the player and computer has
+//logWins function to check how many wins the player and computer has
 function logWins(){
 let playerWins = winners.filter((item) => item == 'player wins').length;
 let computerWins = winners.filter((item) => item == 'computer wins').length;
@@ -98,7 +98,7 @@ function logRound(playerChoice, computerChoice, winner, round){
     console.log('player chose: ', playerChoice);
     console.log('computer chose: ', computerChoice);
     console.log(winner, 'won the round');
+    console.log('-----------------------------------');
 }
 
 //this begins the game
-game();
