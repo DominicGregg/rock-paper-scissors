@@ -10,8 +10,11 @@ function game(){
 function playRound() {
     const playerSelection = playerChoice();
     const computerSelection = computerChoice();
+    console.log(computerSelection);
     //gets result of computerChoice function
     //which is R P or S
+    const winner = checkWinner(playerSelection, computerSelection);
+    console.log(winner);
 }
 
 function playerChoice () {
@@ -31,6 +34,8 @@ function playerChoice () {
         check = validateInput(input);
         //will make input lower case and check if it is true.
     }
+    //need to return input to console
+    return input;
    // console.log(input);
 }
 
@@ -52,7 +57,7 @@ function validateInput(choice) {
 }
 
 function checkWinner(choiceP, choiceC) {
-    if(choiceP = choiceC) {
+    if(choiceP === choiceC) {
         return 'tie';
     } else if(choiceP === 'rock' && choiceC == 'scissors'){
         return 'player wins';
