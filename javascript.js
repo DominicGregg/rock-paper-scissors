@@ -1,23 +1,27 @@
 const choices =['rock', 'paper', 'scissors'];
+//choices available 
+
+const winners = [];
 
 function game(){
     //play the game
     //play 5 rounds
     //console based
-    for(let i = 0; i <= 5; i++){
-        playRound();
+    for(let i = 0; i <= 4; i++){
+        playRound(i);
     }
-// code replays 5 times, i is the round and inceades by 1 until its been played 5 times
+    logWins();
+// code replays 5 times, i is the round and incenses by 1 until its been played 5 times
 }
 
-function playRound() {
+function playRound(round) {
     const playerSelection = playerChoice();
     const computerSelection = computerChoice();
-    console.log(computerSelection);
     //gets result of computerChoice function
     //which is R P or S
     const winner = checkWinner(playerSelection, computerSelection);
-    console.log(winner);
+    winners.push(winner);
+    logRound(playerSelection, computerSelection, winner, round);
 }
 
 function playerChoice () {
@@ -77,6 +81,24 @@ function checkWinner(choiceP, choiceC) {
     }
 }
 
+
+//logwins function to check how many wins the player and computer has
+function logWins(){
+let playerWins = winners.filter((item) => item == 'player wins').length;
+let computerWins = winners.filter((item) => item == 'computer wins').length;
+let ties = winners.filter((item) == 'tie').length;
+console.log('results: ');
+console.log('player wins: ', playerWins);
+console.log('computer wins: ', computerWins);
+console.log('Ties: ', ties);
+}
+
+function logRound(playerChoice, computerChoice, winner, round){
+    console.log('round: ', round);
+    console.log('player chose: ', playerChoice);
+    console.log('computer chose: ', computerChoice);
+    console.log(winner, 'won the round');
+}
 
 //this begins the game
 game();
