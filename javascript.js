@@ -67,38 +67,37 @@ function checkWinner(choiceP, choiceC) {
     if(choiceP === choiceC) {
         return 'tie';
     } else if(choiceP === 'rock' && choiceC == 'scissors'){
-        return 'player wins';
+        return 'player win';
     } else if(choiceP === 'scissors' && choiceC == 'paper'){
-        return 'player wins';
+        return 'player win';
     } else if(choiceP === 'paper' && choiceC == 'rock'){
-        return 'player wins';
+        return 'player win';
     } else if(choiceP === 'rock' && choiceC == 'paper'){
-        return 'computer wins';
+        return 'computer win';
     } else if(choiceP === 'scissors' && choiceC == 'rock'){
-        return 'computer wins'
+        return 'computer win'
     } else if(choiceP === 'paper' && choiceC == 'scissors'){
-        return 'computer wins'
+        return 'computer win'
     }
 }
 
-
-//logWins function to check how many wins the player and computer has
-function logWins(){
-let playerWins = winners.filter((item) => item == 'player wins').length;
-let computerWins = winners.filter((item) => item == 'computer wins').length;
-let ties = winners.filter((item) == 'tie').length;
-console.log('results: ');
-console.log('player wins: ', playerWins);
-console.log('computer wins: ', computerWins);
-console.log('Ties: ', ties);
-}
 
 function logRound(playerChoice, computerChoice, winner, round){
     console.log('round: ', round);
     console.log('player chose: ', playerChoice);
     console.log('computer chose: ', computerChoice);
-    console.log(winner, 'won the round');
-    console.log('-----------------------------------');
+    console.log('the round was a', winner);
+    console.log('-------------------');
 }
 
-//this begins the game
+//logWins function to check how many wins the player and computer has
+function logWins(){
+    let playerWins = winners.filter((beep) => beep == 'player win').length;
+    let computerWins = winners.filter((beep) => beep == 'computer win').length;
+    let ties = winners.filter((beep) == 'tie').length;
+    console.log('results: ');
+    console.log('player wins: ', playerWins);
+    console.log('computer wins: ', computerWins);
+    console.log('Ties: ', ties);
+    }
+
