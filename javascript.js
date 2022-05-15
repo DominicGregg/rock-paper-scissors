@@ -25,8 +25,11 @@ function playerChoice () {
     input = input.toLowerCase();
     //this makes the string all lower case
     let check = validateInput(input)
-    if(check == true){
-        console.log(input);
+    while (check == false){
+        input = prompt('Type rock, paper or scissors correctly. Spelling is important, capitalization does not matter');
+        input = input.toLowerCase();
+        check = validateInput(input);
+        //will make input lower case and check if it is true.
     }
    // console.log(input);
 }
@@ -43,12 +46,15 @@ function computerChoice() {
 //input is R P or S
 //if not R P or S then it will not log the response
 function validateInput(choice){
-    if(choices.includes(choice)){
-        return true;
-    } else {
-        return false;
-    }
+    if(choices.includes(choice));
+        return choices.includes(choice);
+    
+// will only select a choice if it is R P or S (choices)
+//then returns that choice to the console
 }
+
+
+
 
 //this begins the game
 game();
