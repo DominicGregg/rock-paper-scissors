@@ -4,7 +4,10 @@ function game(){
     //play the game
     //play 5 rounds
     //console based
-    playRound();
+    for(let i = 0; i <= 5; i++){
+        playRound();
+    }
+// code replays 5 times, i is the round and inceades by 1 until its been played 5 times
 }
 
 function playRound() {
